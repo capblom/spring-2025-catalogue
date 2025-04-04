@@ -5,23 +5,35 @@ const openSans = Open_Sans({ subsets: ["latin"], weight: ["400", "600", "700"] }
 
 export default function Home() {
   return (
-    <div
-      className={`min-h-screen bg-cover bg-center bg-no-repeat text-white flex flex-col justify-between items-center ${openSans.className}`}
-      style={{ backgroundImage: 'url("/background.jpg")' }}
-    >
-      {/* Logo */}
-      <header className="w-full p-6 flex justify-start">
-        <Image src="/logo.png" alt="Bloms Bulbs Logo" width={300} height={90} />
-      </header>
+    <div className={`min-h-screen bg-white text-black flex flex-col items-center justify-center p-4 sm:p-6 ${openSans.className}`}>
+      <div className="bg-[#1d312a] rounded-xl flex flex-col items-center w-full max-w-3xl p-8">
+        {/* Logo larger at the top */}
+        <Image src="/logo.png" alt="Bloms Bulbs Logo" width={350} height={100} className="mb-4" />
 
-      {/* Main Content */}
-      <main className="flex flex-col gap-6 items-center justify-center text-center px-4">
-        <h1 className="text-3xl font-bold uppercase tracking-wide">Spring 2025 Bulb Catalogue</h1>
+        {/* Centered image with original proportions and no cropping */}
+        <div className="w-full overflow-hidden rounded-lg flex justify-center items-center">
+          <Image
+            src="/background.jpg"
+            alt="Catalogue Preview"
+            width={600}
+            height={225}
+            className="rounded-lg object-contain"
+          />
+        </div>
 
+        {/* Spring 2025 text under the image */}
+        <h2 className="text-white text-base font-normal mt-4 tracking-wide uppercase">Spring 2025</h2>
+
+        {/* Website under everything */}
+        <p className="text-white text-2xl font-bold mt-2">www.blomsbulbs.com</p>
+      </div>
+
+      {/* Buttons underneath */}
+      <div className="flex flex-col sm:flex-row gap-4 mt-6 items-center justify-center">
         <a
           href="/bloms-spring-2025.pdf"
           download
-          className="bg-white text-black px-6 py-3 rounded-full text-lg font-medium shadow hover:bg-gray-100 transition"
+          className="bg-[#1d312a] text-white px-6 py-3 rounded-full text-lg font-medium shadow hover:bg-[#29463d] transition"
         >
           Download Now
         </a>
@@ -29,17 +41,11 @@ export default function Home() {
           href="https://www.blomsbulbs.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-transparent border border-white px-6 py-3 rounded-full text-lg font-medium hover:bg-white hover:text-black transition"
+          className="border border-[#1d312a] text-[#1d312a] px-6 py-3 rounded-full text-lg font-medium hover:bg-[#1d312a] hover:text-white transition"
         >
           Visit Our Website to Shop Online
         </a>
-      </main>
-
-      {/* Footer */}
-      <footer className="text-sm text-center p-4 w-full" style={{ backgroundColor: "rgba(29, 49, 42, 0.7)" }}>
-        Bloms Bulbs, Primrose Nurseries, Melchbourne, Bedford, MK44 1ZZ<br />
-        T: 01234 709099 &nbsp;&nbsp;|&nbsp;&nbsp; E: help@blomsbulbs.com
-      </footer>
+      </div>
     </div>
   );
 }
