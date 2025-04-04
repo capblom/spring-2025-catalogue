@@ -19,7 +19,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold uppercase tracking-wide">Spring 2025 Bulb Catalogue</h1>
 
         <a
-          href="/my-document.pdf"
+          href="/bloms-spring-2025"
           download
           className="bg-white text-black px-6 py-3 rounded-full text-lg font-medium shadow hover:bg-gray-100 transition"
         >
